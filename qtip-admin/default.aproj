@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project ver="10" name="qtip-admin" libEmbed="true" icon="..." ui="win" output="qtip-admin.exe" CompanyName="Carrier" FileDescription="qtip-admin" LegalCopyright="Copyright (C) Carrier 2020" ProductName="qtip-admin" InternalName="qtip-admin" FileVersion="0.0.0.02" ProductVersion="0.0.0.02" publishDir="/dist/" dstrip="false" local="false">
+	<file name="main.aardio" path="main.aardio" comment="main.aardio"/>
+	<folder name="资源文件" path="res" embed="true"/>
+	<folder name="窗体文件" path="dlg" comment="目录" embed="true"/>
+</project>
