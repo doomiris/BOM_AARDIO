@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project ver="10" name="Domi_Helper" libEmbed="true" icon="D:\users\Personal LGP\personal Documents\code_space\icon\Shortcut.ico" ui="win" output="domi_helper.exe.bak" CompanyName="Carrier" FileDescription="domisoft" LegalCopyright="Copyright (C) Carrier 2020" ProductName="Domi_Helper" InternalName="Domi_Helper" FileVersion="0.0.1.08" ProductVersion="0.0.1.08" publishDir="/dist/" dstrip="false" local="false">
+	<file name="main.aardio" path="main.aardio" comment="main.aardio"/>
+	<folder name="资源文件" path="res" embed="true" local="false">
+		<file name="asm-c.bmp" path="res\asm-c.bmp" comment="res\asm-c.bmp"/>
+		<file name="asm-m.bmp" path="res\asm-m.bmp" comment="res\asm-m.bmp"/>
+		<file name="part-m.bmp" path="res\part-m.bmp" comment="res\part-m.bmp"/>
+		<file name="part-p.bmp" path="res\part-p.bmp" comment="res\part-p.bmp"/>
+		<file name="part-s.bmp" path="res\part-s.bmp" comment="res\part-s.bmp"/>
+		<file name="part-sh.bmp" path="res\part-sh.bmp" comment="res\part-sh.bmp"/>
+	</folder>
+	<folder name="窗体文件" path="dlg" comment="目录" embed="true" local="false">
+		<file name="hotkey.aardio" path="dlg\hotkey.aardio" comment="dlg\hotkey.aardio"/>
+		<file name="setting.aardio" path="dlg\setting.aardio" comment="dlg\setting.aardio"/>
+		<file name="first.aardio" path="dlg\first.aardio" comment="dlg\spelling.aardio"/>
+		<file name="help.aardio" path="dlg\help.aardio" comment="dlg\help.aardio"/>
+	</folder>
+</project>
