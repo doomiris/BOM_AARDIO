@@ -1,0 +1,62 @@
+import win.ui;
+import fsys.table;
+/*DSG{{*/
+winForm = win.form(text="qtip Admin";right=638;bottom=502)
+winForm.add(
+button2={cls="button";text="安装驱动";left=40;top=472;right=126;bottom=495;db=1;dl=1;z=1};
+button4={cls="button";text="更新图号库";left=56;top=232;right=152;bottom=328;color=10789024;db=1;dl=1;flat=1;z=2};
+button6={cls="button";text="更新目录库";left=56;top=64;right=152;bottom=160;color=10789024;db=1;dl=1;flat=1;z=3};
+button7={cls="button";text="加密";left=288;top=64;right=384;bottom=160;flat=1;z=4};
+edit={cls="edit";text="CCL100100";left=288;top=168;right=384;bottom=192;multiline=1;z=5};
+static={cls="static";text="按CTRL键执行";left=184;top=24;right=296;bottom=48;color=255;transparent=1;z=6}
+)
+/*}}*/
+
+/*加密{{*/
+var dbmm = function(dbpath, pw){
+	import sqlite.aes256;
+	var mm = sqlite.aes256(dbpath)
+	mm.rekey(pw); //用rekey加密的数据库无法用Cipher解密, wxsqlite最新版已经修复这个问题了.
+	mm.close();
+	win.msgbox("加密成功, 即将退出")
+	win.quitMessage()
+}
+/*}}*/
+//TODO: 单独录入图纸map记录
+/*生成文件清单{{*/
+winForm.button4.oncommand = function(id,event){
+    import key;
+    if !(key.getState(key.VK.CTRL)) return ; 
+    import fsys.dlg;
+    import win.inputBox;
+    
+	var path = fsys.dlg.open('Excel文件|*.xlsx',,,winForm);
+	if !(path) return ;
+	var inputbox = win.inputBox(winForm.hwnd,false);
+	inputbox.text = "输入"
+	inputbox.info.text = "表名"
+	inputbox.input.text = "part list"
+	var sht = inputbox.doModal();
+	if !(sht) return ;
+	import getList;
+    getList.appendDrawingMapFromExcel(path, sht);
+
+}
+winForm.button6.oncommand = function(id,event){
+    import key;
+    if !(key.getState(key.VK.CTRL)) return ; 
+    import getList;
+    getList.saveFolderDB();
+    win.msgbox("done");
+ //   winForm.close();
+}
+/*}}*/
+winForm.button7.oncommand = function(id,event){
+    import fsys.dlg;
+	var path = fsys.dlg.open('DB文件|*.db',"打开","S:\Admin\SAP\db\", winForm);
+	if !(path) return ;
+	dbmm(path, winForm.edit.text);	
+} 
+winForm.show();
+win.loopMessage();
+
