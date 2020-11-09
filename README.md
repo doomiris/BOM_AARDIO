@@ -1,10 +1,10 @@
 # BOM_AARDIO
 Bill Of Material tool, programming with AARDIO
 
-#1 Q-TIP
-export SAP data to sqlite.
-search SAP number or description.
-search SAP number for drawings.
+# Q-TIP
+1. export SAP data to sqlite.
+2. search SAP number or description.
+3. search SAP number for drawings.
 
-#2 BOM-helper
-format exported BOM to tree view.
+# BOM-helper
+1. format exported BOM to tree view.
